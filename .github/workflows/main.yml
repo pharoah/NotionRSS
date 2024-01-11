@@ -1,8 +1,8 @@
-name: Get Feed
+name: Newsletter Feed
 
 on:
   schedule:
-    - cron: '30 12 * * *' # 6pm IST
+    - cron: '30 05 * * *' # 6pm IST
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 14
 
-      - name: Update Notion Feed
+      - name: Update Newsletter Feed
         run: |
           curl -o index.js https://raw.githubusercontent.com/pharoah/some-repo/main/dist/index.js
           node index.js
