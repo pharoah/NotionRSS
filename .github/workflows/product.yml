@@ -2,7 +2,7 @@ name: Product Feed
 
 on:
   schedule:
-    - cron: '10 05 * * *' # 6pm IST
+    - cron: '05 05 * * *' # 6pm IST
   workflow_dispatch:
 
 jobs:
