@@ -53,7 +53,6 @@ export async function addFeedItemToNotion(notionItem) {
     auth: NOTION_API_TOKEN,
     logLevel,
   });
-  console.log(title, link, content);
   try {
     await notion.pages.create({
       parent: {
