@@ -1,0 +1,25 @@
+name: Research Feed
+
+on:
+  schedule:
+    - cron: '25 05 * * *' # 6pm IST
+  workflow_dispatch:
+
+jobs:
+  get-feed:
+    runs-on: ubuntu-latest
+    env:
+      NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+      NOTION_READER_DATABASE_ID: ${{ secrets.NOTION_RESEARCH_READER_ID }}
+      NOTION_FEEDS_DATABASE_ID: ${{ secrets.NOTION_RESEARCH_FEEDER_ID }}
+      RUN_FREQUENCY: 86400 # in seconds
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Update Research Feed
+        run: |
+          curl -o index.js https://raw.githubusercontent.com/pharoah/some-repo/main/dist/index.js
+          node index.js
