@@ -21,5 +21,5 @@ jobs:
 
       - name: Update GitHub Feed
         run: |
-          curl -o index.js /home/runner/work/notion-feeder-final/notion-feeder-final/main/dist/index.js
+          curl -o index.js https://raw.githubusercontent.com/pharoah/NotionRSS/main/dist/index.js
           node index.js
