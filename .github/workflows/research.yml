@@ -21,5 +21,5 @@ jobs:
 
       - name: Update Research Feed
         run: |
-          curl -o index.js https://raw.githubusercontent.com/pharoah/some-repo/main/dist/index.js
+          curl -o index.js https://raw.githubusercontent.com/pharoah/notion-feeder-final/main/dist/index.js?token=GHSAT0AAAAAACMXTDT7LE5A4SWNPXFVPBSIZNA4RMQ
           node index.js
